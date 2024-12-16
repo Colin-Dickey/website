@@ -3,14 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My First Website</title>
+    <title>Decay Project</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <h1>Decay Project</h1>
-    <p>Calculation of Strontium-79 and Rubidium-79 half-lifes, decay constants and associated uncertainties.</p>
-</body>
 
-<img src="images/Code-Assignment.png" width="600" height="600">
+<body>
+    <a href="index.html">Home</a>
+    <h1>Decay Project</h1>
+    <p>Context of data collection was 10-6 moles of Sr-79 decaying into Rb-79, then photons detected from the beta plus decay of the Rb-79.</p>
+    <h2>Results</h2>
+    <img src="images/Code-Assignment.png" width="600" height="600">
+    <p>Comparing to known values of decay constant,  Rb-79=0.5ms-1 and Sr-79=5ms-1, spot on.</p>
+    <br></br>
+    <h2>Process: Values</h2>
+    <p>Without considering uncertainties, first we derive the activity of Rb-79 with some differential equation substitutions.</p>
+    <img src="images/Rb-Activity.png" width="448" height="38">
+    <p>This is going to create the red model curve seen previously, and to then create the line of best fit, we can use a least squares method with a few iterations to obtain the best values for the decay constants for Rb-79 and Sr-79, by minimising chi^2. Quite simple, uncertainties are a bit more involved.</p>
+    <br></br>
+    <h2>Process: Uncertainties</h2>
+    <p>To calculate the uncertainties associated with these values, we'll vary the values of the decay constant slightly and with each variation, recalculate chi^2.</p>
+    <p>Using some nice relationships between chi^2 and the standard deviation of parameters, if we take the ellipse of constant chi^2+1, and calculate the difference from the top and bottom of the the ellipse, we'll get 1 standard deviation(uncertainty) of the parameter on the vertical axes. (Similary for the horizontal axes)
+    <br></br>
+    <a href="index.html">Home</a>
+    <br></br>
+</body>
 
 </html>
