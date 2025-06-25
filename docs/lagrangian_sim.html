@@ -9,16 +9,32 @@
 
 <body>
     <a href="index.html">Home</a>
-    <h1>Lagrangian Fluid Simulation</h1>
+
+    <h1>
+        Lagrangian Fluid Simulation
+    </h1>
     <p>As I understand it, a lagrangian fluid simulation is one in which the fluid is simulated using many particles that detect collisions
         and interactions with one another as opposed to a eulerian fluid simulation that uses a grid and produces a velocity field of the fluid.
         This definitely feels like the easier of the two, I think the goal would be to get as many particles on the screen in real time as possible. 
     </p>
-    <h2>Least Optimised Viable Solution</h2>
-    <img src="images/Code-Assignment.png" width="600" height="600">
+    <p>
+        We'll start with a 2D solution but will eventually upgrade to a 3D solution which is a trivial evolution.
+    </p>
+
+    <h2>
+        Least Optimised Viable Solution
+    </h2>
+    <img src="images/lagrangian_fluid_sim_first_viable.png" width="600" height="375">
+    <p>
+        This simulation works but is quite terrible, every particle is checking itself against every other particle in the simulation, when they
+        may be on other sides of the screen to one another.
+    </p>
+    <p>
+        
+    </p>
+
     <br></br>
     <a href="index.html">Home</a>
-    <br></br>
 
 </body>
 
