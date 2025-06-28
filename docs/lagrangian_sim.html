@@ -20,18 +20,42 @@
     <p>
         We'll start with a 2D solution but will eventually upgrade to a 3D solution which is a trivial evolution.
     </p>
+    <h2>
+        Collision Detection
+    </h2>
+    <p>
+        To calculate the collisions the simulator determines the distance between two points then checks if there is overlap. If there is the simulation
+        then will compute the normalised vector between the two circles and then reassign their velocities as if it was a perfectly elastic collision.
+    </p>
+    <img src="images/collision_logic.drawio.png" width="361" height="261">
+    <p>
+        For more information on the mathematics applied to the simulation see <a href ="https://en.wikipedia.org/wiki/Elastic_collision#Two-dimensional_collision_with_two_moving_objects">Two Dimensional Collision.</a>
+    </p>
 
     <h2>
         Least Optimised Viable Solution
     </h2>
     <img src="images/lagrangian_fluid_sim_first_viable.png" width="600" height="375">
     <p>
-        This simulation works but is quite terrible, every particle is checking itself against every other particle in the simulation, when they
-        may be on other sides of the screen to one another.
+        This simulation works but is quite terrible, every particle is checking itself against every other particle in the simulation for collisions, when they
+        may be on other sides of the screen to one another. To fix this we can employ a better method of tracking particles to reduce the number of calculations
+        the simulation computes.
     </p>
+    <h2>
+        Grid-Based Data Structure
+    </h2>
     <p>
-        
+        The easiest would be a simple grid based structure that tracks the grid that each particle is in, only performing the collision check when a particle is
+        in a neighbour grid.
     </p>
+    <img src="images/grid_data_structure.jpg" width="562" height="562">
+    <p>
+        We can see that given a sufficently small radius of circle, circle 7 can ignore the collision effects of 1-6 as they are not in neighbouring grids
+        and therefore it is not possible to collide with them, we therefore do not have to compute the collision. This produces a pretty substantial performance
+        increase. 40x the number of particles at roughly the same FPS, it may also be possible to optimise the grid size for the particle radius so perhaps
+        I'll run an experiment and determine the optimal parameters for my collision detection.
+    </p>
+    <img src="images/lagrangian_fluid_sim.png" width="600" height="375">
 
     <br></br>
     <a href="index.html">Home</a>
