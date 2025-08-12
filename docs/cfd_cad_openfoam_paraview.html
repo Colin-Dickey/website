@@ -3,15 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Learning About CFD</title>
+    <title>CFD+FEM</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <a href="index.html">Home</a>
-    <h1>Getting into CFD!</h1>
-    <p>If you're considering employing me or found this page exploring, this should be a sort of blog exploring my interest in CFD with OpenFoam. I'm also very excited to be beginning my usage of CAD software, using FreeCAD because open source rules:).</p>
+    <h1>Getting into CFD+FEM!</h1>
+    <p>If you're considering employing me or found this page exploring, this should be a sort of blog exploring my interest in CFD and FEM. I'm also very excited to be beginning my usage of CAD software, using FreeCAD because open source rules:), but I will likely look at using SolidWorks very soon.</p>
     <p>I'm certainly still in the process of developing my Eulerian and Lagrangian fluid simulator, however I think I want to retry them with OpenGL because I would like them to be 3D at some point and I think OpenGL is better for this.</p>
+
+    <h2>12/08/2025</h2>
+    <h3>A Hands-on Introduction to Engineering Simulations</h3>
+    <p>
+        Thanks to a free online course from Cornell on edX, I'm getting a thorough walkthrough of the mathematics involved in discretizing a mathematical model of a physics or engineering problem. Not only that, but
+        as the course progresses the theory behind CFD and FEM are taught in great detail with case studies in ANSYS which i'm very keen to try as I believe it has GPU acceleration (FreeCAD is painfully slow). The final
+        case study involves directly relating a CFD simulation into FEM analysis which was my original goal of simulating a hydroturbine rotor to theorise the power output for a given flow. This is all very
+        exciting and I'm incredibly grateful the internet makes learning like this so easy. 
+    </p>
+
+    <img src="images/cad/course_modules.png" width="500" height="450">
+
+    <h3>Airbus Plane in FreeCAD</h3>
+    <p>
+        I've used FreeCAD to develop a model of an Airbus A-340-600 to perform simulations on. I've learnt a lot regarding meshing a CAD model with a lot of trial and error, I'll attach a few images of attempts with some thoughts.
+        I've been a bit unsuccessful in getting a clean simulation of the plane's airflow, unable to show the results I'd like in ParaView.
+    </p>
+
+    <img src="images/cad/airbus_model.png" width="800" height="450">
+    <img src="images/cad/airbus.png" width="538" height="824"> 
+    <img src="images/cad/airbus_velocity_field.png" width="800" height="450">
+
+    <p>
+        I was very happy with the model I created, but for whatever reason I was unable to figure out, when fusing the wings to the main body of the plane the outside surface became irregular and unsmooth on the body, creating an angular mesh that produced
+        faulty results. Also, on closer examination of the mesh, I realised there was not enough resolution on certain surfaces, such as the leading edge of the aerofoil.
+    </p>
+
+    <img src="images/cad/airbus_model_issues.png" width="800" height="450">
+    <img src="images/cad/airbus_wing_refinement.png" width="800" height="450">
 
     <h2>03/08/2024</h2>
     <p>
