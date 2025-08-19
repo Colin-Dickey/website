@@ -13,6 +13,33 @@
     <p>If you're considering employing me or found this page exploring, this should be a sort of blog exploring my interest in CFD and FEM. I'm also very excited to be beginning my usage of CAD software, using FreeCAD because open source rules:), but I will likely look at using SolidWorks very soon.</p>
     <p>I'm certainly still in the process of developing my Eulerian and Lagrangian fluid simulator, however I think I want to retry them with OpenGL because I would like them to be 3D at some point and I think OpenGL is better for this.</p>
 
+    <h2>19/08/2025</h2>
+    <h3>Module 3 Completed</h3>
+
+    <p>
+        The rocket flange on the Apollo 8 was modelled and simulated to investigate if the use of the rocket would create any issues in the clamping of the mid and lower flange, including dangerous tensile stresses or fuel leakage through gaps.
+        I'm enamoured by how great this course is, this module specifically was taken through by an aerospace engineer at SpaceX and he described the thought processes he uses when analysing stresses in models and how he sets up boundary conditions.
+    </p>
+
+    <img src="images/ansys/flange_deformation.gif" width="430" height="275">
+    <img src="images/ansys/rocket_flange.png" width="420" height="250">
+    <img src="images/ansys/cross_section_flange.png" width="420" height="250">
+
+    <p>
+        Module 3 was a more complicated application of strain and stress, involving multiple forces and heat expansion on the bodies. The simulation lasts 3 seconds and different forces are applied over the 3 seconds. The bolt is pre-tensioned in
+        the 1st second, pressure in the channel is added in the 2nd second and finally the effect of heat is added in the 3rd second, hence why the gif runs away as the entire 160 inch cut is lengthening.
+    </p>
+
+    <img src="images/ansys/gap_expansion (1).png" width="420" height="250">
+    <img src="images/ansys/gap_expansion (2).png" width="420" height="250">
+    <img src="images/ansys/stress_comparison_material_capability.png" width="420" height="250">
+
+    <p>
+        We can see in the 1st two pictures the difference in the gap size between the effect of the bolt pre-tensioning and the effect of pressure in the channel (negative/blue values greater gap magnitude). We can also see in the 3rd picture with
+        all 3 forces applied the stress on the material and the small gap formed between the layers on the right hand-side. The values of compressive stress probed in the centre of the bolt and the tensile stress on the right side are acceptable
+        for the types of steel designated to the bolt and flange. I'm getting more and more blown away by how incredible this software is just by being able to pretension bolts and define contact surfaces in the flange.
+    </p>
+
     <h2>16/08/2025</h2>
     <h3>Module 2 Completed</h3>
 
