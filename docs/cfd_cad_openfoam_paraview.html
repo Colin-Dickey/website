@@ -13,6 +13,36 @@
     <p>If you're considering employing me or found this page exploring, this should be a sort of blog exploring my interest in CFD and FEM. I'm also very excited to be beginning my usage of CAD software, using FreeCAD because open source rules:), but I will likely look at using SolidWorks very soon.</p>
     <p>I'm certainly still in the process of developing my Eulerian and Lagrangian fluid simulator, however I think I want to retry them with OpenGL because I would like them to be 3D at some point and I think OpenGL is better for this.</p>
 
+    <h2>21/08/2025</h2>
+    <h3>Module 4 Completed</h3>
+
+    <img src="images/ansys/total_course_results.png" width="430" height="475">
+    <img src="images/ansys/module_4_results.png" width="450" height="95">
+
+    <p>
+        This module was packed with learning, through the big ideas of CFD to the usage of CFD for numerical analysis of pipe and channel flow, a lot was covered. I think one of my favourite results was the comparison between Fluent's pipe flow results
+        and the analytical solution of pipe flow which i'll attach below. The methods of analysing the fluid flow were revealing, and I got a grasp of using residuals, mass imbalances, mesh improvements, lower residual tolerances etc, to verify that the simulation 
+        was set-up correctly. There are 2 more modules after this which are very exciting, my first experience with turbulent flow, and the combination of FEA and CFD in one simulation which should be fantastic.
+    </p>
+
+    <p>
+        Below we have the velocity contour plot of pipe flow(just the upper half of a pipe as its axisymmetric), the drag coefficient over the iterations and the residuals.
+    </p>
+    
+    <img src="images/ansys/laminar_pipe_flow.png" width="550" height="187">
+    <img src="images/ansys/laminar_pipe_flow_cd.png" width="550" height="187">
+    <img src="images/ansys/laminar_pipe_flow_residuals.png" width="550" height="187">
+
+    <p>
+        This simulation was taken with a regular 100 by 10 mesh of quads, and was improved to a 200 by 20 mesh of quads, the simulation iterates until residuals decrease to below 10e-6 so there is little linearisation error. The simulation was also compared
+        with analytical results. 
+    </p>
+
+    <img src="images/ansys/velocity_graph_laminar_pipe_mesh_improvement.png" width="750" height="450">
+    <br></br>
+    <img src="images/ansys/analytical_comparison.png" width="625" height="415">
+    <img src="images/ansys/analytical_results_pipe_flow.png" width="620" height="360">
+
     <h2>19/08/2025</h2>
     <h3>Module 3 Completed</h3>
 
