@@ -10,8 +10,65 @@
 <body>
     <a href="index.html">Home</a>
     <h1>Getting into CFD+FEM!</h1>
-    <p>If you're considering employing me or found this page exploring, this should be a sort of blog exploring my interest in CFD and FEM. I'm also very excited to be beginning my usage of CAD software, using FreeCAD because open source rules:), but I will likely look at using SolidWorks very soon.</p>
-    <p>I'm certainly still in the process of developing my Eulerian and Lagrangian fluid simulator, however I think I want to retry them with OpenGL because I would like them to be 3D at some point and I think OpenGL is better for this.</p>
+    
+    <p>
+        If you're considering employing me or found this page exploring, this should be a sort of blog exploring my interest in CFD and FEM, with FreeCAD integrated CFD/FEM and ANSYS. I'm also very excited to be beginning my usage of CAD
+        software, using FreeCAD because open source rules:), but I will likely look at using SolidWorks very soon. Feel free to scroll to the bottom and see the humble beginnings I don't plan on removing anything to make myself look better.
+    </p>
+
+    <h2>22/08/2025</h2>
+    <h3>Module 5 Completed</h3>
+
+    <img src="images/ansys/module5_complete.png" width="450" height="95">
+
+    <p>
+            On FreeCAD, I used the integrated CFD software that uses OpenFOAM to run a CFD simulation of an aerofoil. I've come full circle to running a much better simulation using ANSYS Fluent, using a k-epsilon turbulence model as the
+            Reynold's number was ~6 million. The simulation uses a better mesh setup, a better model, better analysis of velocity, pressure, turbulence, lift, drag etc. Hopefull the following pictures, results and validation demonstrate a correctly set-up and
+            analysed simulation.
+    </p>
+
+    <h3>Geometry and Mesh</h3>
+
+    <img src="images/ansys/aerofoil_expected_trends.png" width="630" height="300">
+    <img src="images/ansys/aerofoil_mesh.png" width="700" height="450">
+
+    <p>
+        Hand calculations indicate a lift coefficient of 1.1, so we'll see if the simulation matches this result. A mesh of the NACA 0012 aerofoil was made with two spheres of influence to refine the mesh, and a much finer mesh at the boundary
+        layer of the aerofoil to capture the viscous boundary layer flow.
+    </p>
+
+    <h3>Set-Up and Results</h3>
+
+    <p>
+        The aerofoil experienced a 10 degree upwards airflow at 51.45 m/s. Simulation was ran until residuals < 1e-6 however k reached 1e-5 as it would take a much longer time to reach 1e-6.  
+    </p>
+
+    <img src="images/ansys/velocity_contours.png" width="750" height="450">
+    <img src="images/ansys/vector_field_pressure_contour.png" width="750" height="450">
+    <img src="images/ansys/tke_field.png" width="750" height="450">
+    <img src="images/ansys/velocity_streamlines.png" width="750" height="450">
+
+    <p>
+        From the graphs we can see the expected results indicated at the beginning of regions of high and low, velocity and pressure. The velocity vector field graph indicated no backflow of air which is a good indication nothing strange
+        is happening at the boundary of the aerofoil.
+    </p>
+
+    <h3>Validation to Experimental Data</h3>
+
+    <img src="images/ansys/ladson_data.png" width="504" height="174">
+
+    <p>
+        This simulation produced C_l = 1.063 and C_p = 0.017, which is very close to the measured values in Ladson (1988) for the aerofoil shape at a very similar attack angle. To validate the results further NASA data on the
+        pressure coefficient from the leading edge to the trailing edge was compared to simulated values. These curves overlap very nicely, indicating our simulation was an accurate representation of real physics.
+    </p>
+
+    <img src="images/ansys/pressure_coefficient_experimental_data.png" width="750" height="450">
+
+    <h3>Improvements</h3>
+
+    <p>
+        To improve the simulation, it might be better to use another turbulence model such as SST k-omega and increase the resolution of the mesh specifically near the boundary layer as this could improve the value of the coefficient of drag.
+    </p>
 
     <h2>21/08/2025</h2>
     <h3>Module 4 Completed</h3>
