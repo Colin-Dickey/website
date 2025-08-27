@@ -16,15 +16,76 @@
         software, using FreeCAD because open source rules:), but I will likely look at using SolidWorks very soon. Feel free to scroll to the bottom and see the humble beginnings I don't plan on removing anything to make myself look better.
     </p>
 
+    <h2>26/08/2025</h2>
+    <h3>Module 6 Half Completed</h3>
+
+    <img src="images/ansys/turbine/turbine_set_up.png" width="500" height="190">
+
+    <h3>Set-Up, Geometry and Meshing</h3>
+
+    <p>
+        Simulation was run on a wind turbine blade with a periodic rotational boundary condition, to create 3 turbine blades that are similar in geometry to the GE 1.5XLE turbine blades, with a SST k-omega turbulence model.
+        Incoming wind speed is 12 m/s with a turbulent intensity of 5% and turbulent viscosity ratio of 10 and the frame of reference of the flow is rotated at -2.22 rad/s. At the rated wind speed of 11.5 m/s the specification
+        sheet of the GE 1.5 XLE wind turbine produces a power coefficient of 0.3, so we'll see what we get.
+    </p>
+
+    <img src="images/ansys/turbine/turbine_geometry.png" width="500" height="290">
+    <img src="images/ansys/turbine/turbine_mesh.png" width="500" height="290">
+
+    <p>
+        The mesh produced ~400,000 cells with a mean skewness of ~0.2. The interfacing meshes on the periodic boundary condition are conformal which is eased by ensuring the mesh surfaces are matched.
+    </p>
+
+    <h3>Results</h3>
+
+    <img src="images/ansys/turbine/turbine_velocity.png" width="500" height="290">
+    <img src="images/ansys/turbine/turbine_streamlines.png" width="500" height="290">
+
+    <p>
+        Blade tip velocity was 98.01 m/s which nearly exactly matches the 98.12 m/s using the length and angular velocity. We can see that the velocity streamlines after passing through the wind turbine decrease in velocity indicating the
+        wind imparted its energy on the turbine. 
+    </p>
+
+    <img src="images/ansys/turbine/turbine_blade_pressure (1).png" width="500" height="290">
+    <img src="images/ansys/turbine/turbine_blade_pressure (2).png" width="500" height="290">
+    
+    <p>
+        The pressure contour on the blade surface from front (left image) to back (right image) show a pressure differential created by a velocity differential from flow over the blades, producing lift and therefore torque.
+        We can take a contour plot of pressure and velocity from the cross sectional view of the blade. 
+    </p>
+
+    <img src="images/ansys/turbine/vector_velocity_pressure_field.png" width="1000" height="580">
+
+    <p>
+        The image more clearly demonstrates the velocity and pressure differntial on the blade surface and one can imagine the direction of the lift force.
+    </p>
+
+    <img src="images/ansys/turbine/moments_on_blade.png" width="1000" height="100">
+    <img src="images/ansys/turbine/coefficient_power.png" width="313" height="96">
+
+    <p>
+        We can see that the pressure difference produces a total torque of -121117 Nm on an individual blade so we can use this to calculate the power coefficient which comes out as ~12%, this is lower than the expected 30%.
+        Increasing the number of mesh elements increases the power coefficient until ~40%, this is different to the original but the original had assumptions of, steady, homogeneous, incompressible flow, no frictional drag,
+        non-rotating wake etc. One last result just for interest, it's cool to see the turbulence aftermath of the rotating blade.
+    </p>
+
+    <img src="images/ansys/turbine/turbine_mesh_review.png" width="500" height="290">
+    <img src="images/ansys/turbine/turbine_tke.png" width="500" height="290">
+
+    <p>
+        To finish the analysis of the turbine, a stress analysis will be done on the blades.
+    </p>
+
+
     <h2>22/08/2025</h2>
     <h3>Module 5 Completed</h3>
 
     <img src="images/ansys/module5_complete.png" width="450" height="95">
 
     <p>
-            On FreeCAD, I used the integrated CFD software that uses OpenFOAM to run a CFD simulation of an aerofoil. I've come full circle to running a much better simulation using ANSYS Fluent, using a k-epsilon turbulence model as the
-            Reynold's number was ~6 million. The simulation uses a better mesh setup, a better model, better analysis of velocity, pressure, turbulence, lift, drag etc. Hopefull the following pictures, results and validation demonstrate a correctly set-up and
-            analysed simulation.
+        On FreeCAD, I used the integrated CFD software that uses OpenFOAM to run a CFD simulation of an aerofoil. I've come full circle to running a much better simulation using ANSYS Fluent, using a k-epsilon turbulence model as the
+        Reynold's number was ~6 million. The simulation uses a better mesh setup, a better model, better analysis of velocity, pressure, turbulence, lift, drag etc. Hopefull the following pictures, results and validation demonstrate a correctly set-up and
+        analysed simulation.
     </p>
 
     <h3>Geometry and Mesh</h3>
