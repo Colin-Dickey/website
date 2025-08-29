@@ -16,6 +16,35 @@
         software, using FreeCAD because open source rules:), but I will likely look at using SolidWorks very soon. Feel free to scroll to the bottom and see the humble beginnings I don't plan on removing anything to make myself look better.
     </p>
 
+    <h2>27/08/2025</h2>
+    <h3>Module 6 Completed</h3>
+
+    <h2>Set-Up</h2>
+
+    <p>
+        Using the results from the flow simulation, we're going to plug the pressure values on the turbine blade surface into a static structural system to analyse stresses. We model the turbine as having an internal spar and the
+        spar and the shell are linearly decreasing in thickness. The blade material is an composite material with the following orthotropic material properties. Both the thicknesses and material properties are similar to real
+        life values. We also add the force from the rotational velocity onto the blade (-2.22 rad/s).
+    </p>
+
+    <img src="images/ansys/turbine/blade_thickness.png" width="230" height="200">
+    <img src="images/ansys/turbine/orthotropic_material_properties.png" width="500" height="220">
+
+    <h2>Geometry and Meshing</h2>
+
+    <p>
+        Below are some images to help visualise the internal spar and the varying thickness of the material. The mesh has an excellent mean-skewness of less than 0.1, and is optimised for static structural analysis.
+    </p>
+
+    <img src="images/ansys/turbine/turbine_spar.png" width="500" height="360">
+    <img src="images/ansys/turbine/turbine_thickness.png" width="500" height="360">
+    <img src="images/ansys/turbine/turbine_mesh_static.png" width="500" height="360">
+
+    <h2>Results</h2>
+
+    <img src="images/ansys/turbine/turbine_equivalent_stress.gif" width="640" height="310">
+    <img src="images/ansys/turbine/turbine_total_deformation.gif" width="640" height="310">
+
     <h2>26/08/2025</h2>
     <h3>Module 6 Half Completed</h3>
 
